@@ -17,96 +17,96 @@ public class UsuarioModel {
 	@Id
 	@Column
 	@GeneratedValue(strategy=GenerationType.SEQUENCE) //Faz com que o ID seja auto increment, e também já indica que é uma chave primaria (PRIMARY KEY).
-	private Long id_usuario;
+	private Long idUsuario;
 	@Column
-	private String nome_completo;
+	private String nomeCompleto;
 	@Column
 	@JsonFormat(pattern="yyyy-MM-dd")
-	private Date data_nascimento;
+	private Date dataNascimento;
 	@Column
-	private String endereco_usuario;
+	private String enderecoUsuario;
 	@Column
-	private String telefone_usuario;
+	private String telefoneUsuario;
 	@Column
-	private String celular_usuario;
+	private String celularUsuario;
 	@Column
-	private String rg_usuario;
+	private String rgUsuario;
 	@Column
-	private String cpf_usuario;
+	private String cpfUsuario;
 	@Column
-	private String sexo_usuario;
+	private String sexoUsuario;
 	@Column
-	private String email_usuario;
+	private String emailUsuario;
 	@Column
-	private String senha_usuario;
+	private String senhaUsuario;
 	
 	//Getters and Setters
 	
-	public Long getId_usuario() {
-		return id_usuario;
+	public Long getIdUsuario() {
+		return idUsuario;
 	}
-	public void setId_usuario(Long id_usuario) {
-		this.id_usuario = id_usuario;
+	public void setIdUsuario(Long idUsuario) {
+		this.idUsuario = idUsuario;
 	}
-	public String getNome_completo() {
-		return nome_completo;
+	public String getNomeCompleto() {
+		return nomeCompleto;
 	}
-	public void setNome_completo(String nome_completo) {
-		this.nome_completo = nome_completo;
+	public void setNomeCompleto(String nomeCompleto) {
+		this.nomeCompleto = nomeCompleto;
 	}
-	public Date getData_nascimento() {
-		return data_nascimento;
+	public Date getDataNascimento() {
+		return dataNascimento;
 	}
-	public void setData_nascimento(Date data_nascimento) {
-		this.data_nascimento = data_nascimento;
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
-	public String getEndereco_usuario() {
-		return endereco_usuario;
+	public String getEnderecoUsuario() {
+		return enderecoUsuario;
 	}
-	public void setEndereco_usuario(String endereco_usuario) {
-		this.endereco_usuario = endereco_usuario;
+	public void setEnderecoUsuario(String enderecoUsuario) {
+		this.enderecoUsuario = enderecoUsuario;
 	}
-	public String getTelefone_usuario() {
-		return telefone_usuario;
+	public String getTelefoneUsuario() {
+		return telefoneUsuario;
 	}
-	public void setTelefone_usuario(String telefone_usuario) {
-		this.telefone_usuario = telefone_usuario;
+	public void setTelefoneUsuario(String telefoneUsuario) {
+		this.telefoneUsuario = telefoneUsuario;
 	}
-	public String getCelular_usuario() {
-		return celular_usuario;
+	public String getCelularUsuario() {
+		return celularUsuario;
 	}
-	public void setCelular_usuario(String celular_usuario) {
-		this.celular_usuario = celular_usuario;
+	public void setCelularUsuario(String celularUsuario) {
+		this.celularUsuario = celularUsuario;
 	}
-	public String getRg_usuario() {
-		return rg_usuario;
+	public String getRgUsuario() {
+		return rgUsuario;
 	}
-	public void setRg_usuario(String rg_usuario) {
-		this.rg_usuario = rg_usuario;
+	public void setRgUsuario(String rgUsuario) {
+		this.rgUsuario = rgUsuario;
 	}
-	public String getCpf_usuario() {
-		return cpf_usuario;
+	public String getCpfUsuario() {
+		return cpfUsuario;
 	}
-	public void setCpf_usuario(String cpf_usuario) {
-		this.cpf_usuario = cpf_usuario;
+	public void setCpfUsuario(String cpfUsuario) {
+		this.cpfUsuario = cpfUsuario;
 	}
-	public String getSexo_usuario() {
-		return sexo_usuario;
+	public String getSexoUsuario() {
+		return sexoUsuario;
 	}
-	public void setSexo_usuario(String sexo_usuario) {
-		this.sexo_usuario = sexo_usuario;
+	public void setSexoUsuario(String sexoUsuario) {
+		this.sexoUsuario = sexoUsuario;
 	}
-	public String getEmail_usuario() {
-		return email_usuario;
+	public String getEmailUsuario() {
+		return emailUsuario;
 	}
-	public void setEmail_usuario(String email_usuario) {
-		this.email_usuario = email_usuario;
+	public void setEmailUsuario(String emailUsuario) {
+		this.emailUsuario = emailUsuario;
 	}
-	public String getSenha_usuario() {
-		return senha_usuario;
+	public String getSenhaUsuario() {
+		return senhaUsuario;
 	}
-	public void setSenha_usuario(String senha_usuario) {
-		this.senha_usuario = senha_usuario;
+	public void setSenhaUsuario(String senhaUsuario) {
+		this.senhaUsuario = senhaUsuario;
 	}
-
+	
 }

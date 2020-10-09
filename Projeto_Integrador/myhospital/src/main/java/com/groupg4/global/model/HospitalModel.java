@@ -13,39 +13,39 @@ public class HospitalModel {
 	@Id
 	@Column
 	@GeneratedValue(strategy=GenerationType.SEQUENCE) //Faz com que o ID seja auto increment, e também já indica que é uma chave primaria (PRIMARY KEY).
-	private Long id_hospital;
+	private Long idHospital;
 	@Column
-	private String nome_hospital;
+	private String nomeHospital;
 	@Column
-	private String endereco_hospital;
+	private String enderecoHospital;
 	@Column
-	private String codigo_hospital;
+	private String codigoHospital;
 	
 	//Getters and Setters
 	
-	public Long getId_hospital() {
-		return id_hospital;
+	public Long getIdHospital() {
+		return idHospital;
 	}
-	public void setId_hospital(Long id_hospital) {
-		this.id_hospital = id_hospital;
+	public void setIdHospital(Long idHospital) {
+		this.idHospital = idHospital;
 	}
-	public String getNome_hospital() {
-		return nome_hospital;
+	public String getNomeHospital() {
+		return nomeHospital;
 	}
-	public void setNome_hospital(String nome_hospital) {
-		this.nome_hospital = nome_hospital;
+	public void setNomeHospital(String nomeHospital) {
+		this.nomeHospital = nomeHospital;
 	}
-	public String getEndereco_hospital() {
-		return endereco_hospital;
+	public String getEnderecoHospital() {
+		return enderecoHospital;
 	}
-	public void setEndereco_hospital(String endereco_hospital) {
-		this.endereco_hospital = endereco_hospital;
+	public void setEnderecoHospital(String enderecoHospital) {
+		this.enderecoHospital = enderecoHospital;
 	}
-	public String getCodigo_hospital() {
-		return codigo_hospital;
+	public String getCodigoHospital() {
+		return codigoHospital;
 	}
-	public void setCodigo_hospital(String codigo_hospital) {
-		this.codigo_hospital = codigo_hospital;
+	public void setCodigoHospital(String codigoHospital) {
+		this.codigoHospital = codigoHospital;
 	}
-
+	
 }

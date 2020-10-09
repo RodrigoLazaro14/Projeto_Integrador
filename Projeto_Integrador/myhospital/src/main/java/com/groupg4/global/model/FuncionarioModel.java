@@ -13,47 +13,47 @@ public class FuncionarioModel {
 	@Id
 	@Column
 	@GeneratedValue(strategy=GenerationType.SEQUENCE) //Faz com que o ID seja auto increment, e também já indica que é uma chave primaria (PRIMARY KEY).
-	private Long id_funcionario;
+	private Long idFuncionario;
 	@Column
-	private String nome_funcionario;
+	private String nomeFuncionario;
 	@Column
-	private String senha_funcionario;
+	private String senhaFuncionario;
 	@Column
-	private String email_funcionario;
+	private String emailFuncionario;
 	@Column
-	private String codigo_hospital_funcionario;
+	private String codigoHospitalFuncionario;
 	
 	//Getters and Setters
 	
-	public Long getId_funcionario() {
-		return id_funcionario;
+	public Long getIdFuncionario() {
+		return idFuncionario;
 	}
-	public void setId_funcionario(Long id_funcionario) {
-		this.id_funcionario = id_funcionario;
+	public void setIdFuncionario(Long idFuncionario) {
+		this.idFuncionario = idFuncionario;
 	}
-	public String getNome_funcionario() {
-		return nome_funcionario;
+	public String getNomeFuncionario() {
+		return nomeFuncionario;
 	}
-	public void setNome_funcionario(String nome_funcionario) {
-		this.nome_funcionario = nome_funcionario;
+	public void setNomeFuncionario(String nomeFuncionario) {
+		this.nomeFuncionario = nomeFuncionario;
 	}
-	public String getSenha_funcionario() {
-		return senha_funcionario;
+	public String getSenhaFuncionario() {
+		return senhaFuncionario;
 	}
-	public void setSenha_funcionario(String senha_funcionario) {
-		this.senha_funcionario = senha_funcionario;
+	public void setSenhaFuncionario(String senhaFuncionario) {
+		this.senhaFuncionario = senhaFuncionario;
 	}
-	public String getEmail_funcionario() {
-		return email_funcionario;
+	public String getEmailFuncionario() {
+		return emailFuncionario;
 	}
-	public void setEmail_funcionario(String email_funcionario) {
-		this.email_funcionario = email_funcionario;
+	public void setEmailFuncionario(String emailFuncionario) {
+		this.emailFuncionario = emailFuncionario;
 	}
-	public String getCodigo_hospital_funcionario() {
-		return codigo_hospital_funcionario;
+	public String getCodigoHospitalFuncionario() {
+		return codigoHospitalFuncionario;
 	}
-	public void setCodigo_hospital_funcionario(String codigo_hospital_funcionario) {
-		this.codigo_hospital_funcionario = codigo_hospital_funcionario;
+	public void setCodigoHospitalFuncionario(String codigoHospitalFuncionario) {
+		this.codigoHospitalFuncionario = codigoHospitalFuncionario;
 	}
-
+	
 }
