@@ -38,8 +38,9 @@ public class HospitalController {
 	public ResponseEntity<HospitalModel> post(@RequestBody HospitalModel nome) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(nome));
 	}
-	@PutMapping
-	public ResponseEntity<HospitalModel> put(@RequestBody HospitalModel nome) {
+	@PutMapping("/{id}")
+	public ResponseEntity<HospitalModel> put(@PathVariable long id, @RequestBody HospitalModel nome) {
+		nome.setIdHospital(id);
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(nome));
 	}
 	@DeleteMapping("/{id}")

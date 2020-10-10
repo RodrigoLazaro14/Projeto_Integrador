@@ -31,9 +31,9 @@ public class CategoriaController {
 		return ResponseEntity.ok(repository.findAll());
 	}
 	
-	@GetMapping("/{id}")
-	public ResponseEntity<CategoriaModel> findByIdCategoria(@PathVariable long id){
-		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
+	@GetMapping("/{idCategoria}")
+	public ResponseEntity<CategoriaModel> findByIdCategoria(@PathVariable long idCategoria){
+		return repository.findById(idCategoria).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 	
 	@GetMapping("/nome/{nome}")
@@ -47,14 +47,14 @@ public class CategoriaController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(categoria));
 	}
 	
-	@PutMapping("/{id}")
-	public ResponseEntity<CategoriaModel> putCategoria(@PathVariable long id, @RequestBody CategoriaModel categoria){
-		categoria.setIdCategoria(id);
+	@PutMapping("/{idCategoria}")
+	public ResponseEntity<CategoriaModel> putCategoria(@PathVariable long idCategoria, @RequestBody CategoriaModel categoria){
+		categoria.setIdCategoria(idCategoria);
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(categoria));
 	}
 	
-	@DeleteMapping("/{id}")
-	public void deleteCategoria(@PathVariable long id){
-		repository.deleteById(id);
+	@DeleteMapping("/{idCategoria}")
+	public void deleteCategoria(@PathVariable long idCategoria){
+		repository.deleteById(idCategoria);
 	}
 }

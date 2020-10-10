@@ -1,44 +1,52 @@
 package com.groupg4.global.model;
 
-import java.sql.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+import javax.validation.constraints.NotNull;
+import java.sql.Date;
 import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table(name="tb_usuario")
 public class UsuarioModel {
-	
+		
 	@Id
-	@Column
-	@GeneratedValue(strategy=GenerationType.SEQUENCE) //Faz com que o ID seja auto increment, e também já indica que é uma chave primaria (PRIMARY KEY).
+	@GeneratedValue(strategy=GenerationType.SEQUENCE) //Auto increment ePRIMARY KEY.
 	private Long idUsuario;
-	@Column
-	private String nomeCompleto;
-	@Column
+		
+	@NotNull
+	private String nomeUsuario;
+	
+	@NotNull
 	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date dataNascimento;
-	@Column
+	
+	@NotNull
 	private String enderecoUsuario;
-	@Column
+	
 	private String telefoneUsuario;
-	@Column
+	
+	@NotNull
 	private String celularUsuario;
-	@Column
+	
+	@NotNull
 	private String rgUsuario;
-	@Column
+	
+	@NotNull
 	private String cpfUsuario;
-	@Column
+	
+	@NotNull
 	private String sexoUsuario;
-	@Column
-	private String emailUsuario;
-	@Column
+	
+	@NotNull
+	private String loginUsuario;
+	
+	@NotNull
 	private String senhaUsuario;
+	
 	
 	//Getters and Setters
 	
@@ -48,11 +56,14 @@ public class UsuarioModel {
 	public void setIdUsuario(Long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
-	public String getNomeCompleto() {
-		return nomeCompleto;
+	
+	//Getters and Setters
+	
+	public String getNomeUsuario() {
+		return nomeUsuario;
 	}
-	public void setNomeCompleto(String nomeCompleto) {
-		this.nomeCompleto = nomeCompleto;
+	public void setNomeUsuario(String nomeUsuario) {
+		this.nomeUsuario = nomeUsuario;
 	}
 	public Date getDataNascimento() {
 		return dataNascimento;
@@ -96,17 +107,18 @@ public class UsuarioModel {
 	public void setSexoUsuario(String sexoUsuario) {
 		this.sexoUsuario = sexoUsuario;
 	}
-	public String getEmailUsuario() {
-		return emailUsuario;
+	public String getLoginUsuario() {
+		return loginUsuario;
 	}
-	public void setEmailUsuario(String emailUsuario) {
-		this.emailUsuario = emailUsuario;
+	public void setLoginUsuario(String loginUsuario) {
+		this.loginUsuario = loginUsuario;
 	}
+	
 	public String getSenhaUsuario() {
 		return senhaUsuario;
 	}
 	public void setSenhaUsuario(String senhaUsuario) {
 		this.senhaUsuario = senhaUsuario;
 	}
-	
+		
 }

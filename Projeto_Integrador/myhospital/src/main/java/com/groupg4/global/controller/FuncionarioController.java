@@ -37,8 +37,9 @@ public class FuncionarioController {
 	public ResponseEntity<FuncionarioModel> post(@RequestBody FuncionarioModel funcionario) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(funcionario));
 	}
-	@PutMapping
-	public ResponseEntity<FuncionarioModel> put(@RequestBody FuncionarioModel funcionario) {
+	@PutMapping("/{id}")
+	public ResponseEntity<FuncionarioModel> put(@PathVariable long id, @RequestBody FuncionarioModel funcionario) {
+        funcionario.setIdFuncionario(id);
 		return ResponseEntity.ok(repository.save(funcionario));
 	}
 	@DeleteMapping("/{id}")
