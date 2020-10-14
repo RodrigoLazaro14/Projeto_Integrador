@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 public class UsuarioModel {
 		
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE) //Auto increment ePRIMARY KEY.
+	@GeneratedValue(strategy=GenerationType.IDENTITY) //Auto increment ePRIMARY KEY.
 	private Long idUsuario;
 		
 	@NotNull

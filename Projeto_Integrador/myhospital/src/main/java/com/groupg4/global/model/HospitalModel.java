@@ -1,18 +1,24 @@
 package com.groupg4.global.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name= "tb_hospital")
 public class HospitalModel {
 	
 	@Id
-	@Column
-	@GeneratedValue(strategy=GenerationType.SEQUENCE) //Faz com que o ID seja auto increment, e também já indica que é uma chave primaria (PRIMARY KEY).
+	@GeneratedValue(strategy=GenerationType.IDENTITY) //Faz com que o ID seja auto increment, e também já indica que é uma chave primaria (PRIMARY KEY).
 	private Long idHospital;
 	@Column
 	private String nomeHospital;
@@ -20,6 +26,10 @@ public class HospitalModel {
 	private String enderecoHospital;
 	@Column
 	private String codigoHospital;
+	
+	@OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("hospital")
+	private List<CategoriaModel> categoria;
 	
 	//Getters and Setters
 	
@@ -46,6 +56,12 @@ public class HospitalModel {
 	}
 	public void setCodigoHospital(String codigoHospital) {
 		this.codigoHospital = codigoHospital;
+	}
+	public List<CategoriaModel> getCategoria() {
+		return categoria;
+	}
+	public void setCategoria(List<CategoriaModel> categoria) {
+		this.categoria = categoria;
 	}
 	
 }

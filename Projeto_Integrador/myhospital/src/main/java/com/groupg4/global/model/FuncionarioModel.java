@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class FuncionarioModel {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE) //Faz com que o ID seja auto increment, e também já indica que é uma chave primaria (PRIMARY KEY).
+	@GeneratedValue(strategy=GenerationType.IDENTITY) //Faz com que o ID seja auto increment, e também já indica que é uma chave primaria (PRIMARY KEY).
 	private Long idFuncionario;
 	@Column
 	private String nomeFuncionario;
