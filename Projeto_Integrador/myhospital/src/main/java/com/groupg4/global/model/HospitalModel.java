@@ -31,6 +31,10 @@ public class HospitalModel {
 	@JsonIgnoreProperties("hospital")
 	private List<CategoriaModel> categoria;
 	
+	@OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("funcionario")
+	private List<FuncionarioModel> funcionarioHospital;
+	
 	//Getters and Setters
 	
 	public Long getIdHospital() {
@@ -62,6 +66,12 @@ public class HospitalModel {
 	}
 	public void setCategoria(List<CategoriaModel> categoria) {
 		this.categoria = categoria;
+	}
+	public List<FuncionarioModel> getFuncionarioHospital() {
+		return funcionarioHospital;
+	}
+	public void setFuncionarioHospital(List<FuncionarioModel> funcionarioHospital) {
+		this.funcionarioHospital = funcionarioHospital;
 	}
 	
 }

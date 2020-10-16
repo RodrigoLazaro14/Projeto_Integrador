@@ -5,7 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table(name="tb_funcionario")
 public class FuncionarioModel {
@@ -18,9 +21,13 @@ public class FuncionarioModel {
 	@Column
 	private String senhaFuncionario;
 	@Column
-	private String emailFuncionario;
+	private String loginFuncionario;
 	@Column
 	private String codigoHospitalFuncionario;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("funcionario")
+	private HospitalModel hospital;
 	
 	//Getters and Setters
 	
@@ -42,11 +49,11 @@ public class FuncionarioModel {
 	public void setSenhaFuncionario(String senhaFuncionario) {
 		this.senhaFuncionario = senhaFuncionario;
 	}
-	public String getEmailFuncionario() {
-		return emailFuncionario;
+	public String getLoginFuncionario() {
+		return loginFuncionario;
 	}
-	public void setEmailFuncionario(String emailFuncionario) {
-		this.emailFuncionario = emailFuncionario;
+	public void setLoginFuncionario(String loginFuncionario) {
+		this.loginFuncionario = loginFuncionario;
 	}
 	public String getCodigoHospitalFuncionario() {
 		return codigoHospitalFuncionario;
@@ -54,5 +61,11 @@ public class FuncionarioModel {
 	public void setCodigoHospitalFuncionario(String codigoHospitalFuncionario) {
 		this.codigoHospitalFuncionario = codigoHospitalFuncionario;
 	}
-	
+	public HospitalModel getHospital() {
+		return hospital;
+	}
+	public void setHospital(HospitalModel hospital) {
+		this.hospital = hospital;
+	}
+		
 }
