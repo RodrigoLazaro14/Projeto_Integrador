@@ -38,6 +38,16 @@ public class UsuarioController {
 				.map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
 	}
+	
+	@GetMapping("/cpf/{cpf}")
+	public ResponseEntity<List<UsuarioModel>> findByCpfUsuario(@PathVariable String cpf){
+		return ResponseEntity.ok(repository.findByCpfUsuarioContainingIgnoreCase(cpf));
+	}
+
+	@GetMapping("/nome/{nome}")
+	public ResponseEntity<List<UsuarioModel>> findByNomeUsuario(@PathVariable String nome){
+		return ResponseEntity.ok(repository.findByNomeUsuarioContainingIgnoreCase(nome));
+	}
 	@PostMapping
 	public ResponseEntity<UsuarioModel> post (@RequestBody UsuarioModel usuario){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(usuario));
