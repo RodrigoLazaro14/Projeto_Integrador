@@ -7,8 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.groupg4.global.model.FuncionarioModel;
 
-import net.bytebuddy.dynamic.DynamicType.Builder.MethodDefinition.ImplementationDefinition.Optional;
-
+import java.util.Optional;
 @Repository
 public interface FuncionarioRepository extends JpaRepository<FuncionarioModel, Long> {
 	

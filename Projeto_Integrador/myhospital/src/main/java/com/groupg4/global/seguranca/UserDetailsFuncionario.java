@@ -1,22 +1,26 @@
-package com.groupg4.global.funcionario.seguranca;
+package com.groupg4.global.seguranca;
 
 import java.util.Collection;
-import antlr.collections.List;
+import java.util.List;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-public class FuncionarioUserDetails implements UserDetails {
+import com.groupg4.global.model.FuncionarioModel;
+
+
+public class UserDetailsFuncionario implements UserDetails {
 	private static final long serialVersionUID = 1L;
 	private String userName;
 	private String password;
 	private List<GrantedAuthority> authorities;
 
-	public UserDetailsImpl(Usuario user) {
-		this.userName = user.getUsuario();
-		this.password = user.getSenha();		
+	public UserDetailsFuncionario(FuncionarioModel user) {
+		this.userName = user.getLoginFuncionario();
+		this.password = user.getSenhaFuncionario();		
 	}
 
-	public UserDetailsImpl() {}
+	public UserDetailsFuncionario() {}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

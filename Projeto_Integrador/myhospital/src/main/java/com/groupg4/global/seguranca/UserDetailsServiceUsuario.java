@@ -7,20 +7,21 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
-import com.groupg4.global.model.FuncionarioModel;
-import com.groupg4.global.repository.FuncionarioRepository;
+
+import com.groupg4.global.model.UsuarioModel;
+import com.groupg4.global.repository.UsuarioRepository;
 
 @Service
-public class UserDetailsServiceFuncionario implements UserDetailsService {
+public class UserDetailsServiceUsuario implements UserDetailsService {
 	
 	@Autowired
-	private FuncionarioRepository funcionarioRepository;
+	private UsuarioRepository usuarioRepository;
 
 	@Override
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-		Optional<FuncionarioModel> user = funcionarioRepository.findByLoginFuncionario(userName);
+		Optional<UsuarioModel> user = usuarioRepository.findByLoginUsuario(userName);
 	user.orElseThrow(() -> new UsernameNotFoundException(userName + "not found."));
-	return user.map(UserDetailsFuncionario::new).get();
+	return user.map(UserDetailsUsuario::new).get();
 	}
 
 }

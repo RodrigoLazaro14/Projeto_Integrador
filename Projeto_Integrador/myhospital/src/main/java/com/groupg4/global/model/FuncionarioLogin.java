@@ -4,11 +4,21 @@ public class FuncionarioLogin {
 
 	private String nome;
 
-	private String emailFuncionario;
+	private String loginFuncionario;
 
 	private String senha;
 	
-	private String codigoHospital;
+	private String token;
+	
+	
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
 
 	public String getNome() {
 		return nome;
@@ -18,12 +28,12 @@ public class FuncionarioLogin {
 		this.nome = nome;
 	}
 
-	public String getUsuario() {
-		return emailFuncionario;
+	public String getLoginFuncionario() {
+		return loginFuncionario;
 	}
 
-	public void setUsuario(String usuario) {
-		this.emailFuncionario = usuario;
+	public void setLoginFuncionario(String loginFuncionario) {
+		this.loginFuncionario = loginFuncionario;
 	}
 
 	public String getSenha() {
@@ -34,11 +44,5 @@ public class FuncionarioLogin {
 		this.senha = senha;
 	}
 
-	public String getCodigoHospital() {
-		return codigoHospital;
-	}
 
-	public void setCodigoHospital(String codigoHospital) {
-		this.codigoHospital = codigoHospital;
-	}
 }

@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.groupg4.global.model.FuncionarioLogin;
 import com.groupg4.global.model.FuncionarioModel;
 import com.groupg4.global.repository.FuncionarioRepository;
 
-import net.bytebuddy.dynamic.DynamicType.Builder.MethodDefinition.ImplementationDefinition.Optional;
-
+import java.util.Optional;
 @Service
 public class FuncionarioService {
 
@@ -29,15 +29,15 @@ public class FuncionarioService {
 
 	public Optional<FuncionarioLogin> Logar(Optional<FuncionarioLogin> user){
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		Optional<FuncionarioModel> funcionario = repository.findByFuncionario(user.get().getFuncionario());
+		Optional<FuncionarioModel> funcionario = repository.findByLoginFuncionario(user.get().getLoginFuncionario());
 		if(funcionario.isPresent()) {
-			if(encoder.matches(user.get().getSenha(), funcionario.get().getSenha())){
-				String auth = user.get().getFuncionario() + ":" + user.get().getSenha();
+			if(encoder.matches(user.get().getSenha(), funcionario.get().getSenhaFuncionario())){
+				String auth = user.get().getLoginFuncionario() + ":" + user.get().getSenha();
 				byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
 				String authHeader = "Basic " + new String(encodedAuth);
 			
 				user.get().setToken(authHeader);
-				user.get().setNome(funcionario.get().getNome());
+				user.get().setNome(funcionario.get().getNomeFuncionario());
 			
 				return user;
 			}

@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.groupg4.global.model.CategoriaModel;
-import com.groupg4.global.model.UserLogin;
+import com.groupg4.global.model.UsuarioLogin;
 import com.groupg4.global.model.UsuarioModel;
 import com.groupg4.global.repository.UsuarioRepository;
+import com.groupg4.global.service.UsuarioService;
 
 @RestController
 @RequestMapping("/usuario")
@@ -33,8 +33,8 @@ public class UsuarioController {
 	private UsuarioService usuarioService;
 	
 	@PostMapping("/logar")
-	public ResponseEntity<UserLogin> Autentication(@RequestBody Optional<UserLogin> user){
-		return usuarioService.logar(user).map(resp -> ResponseEntity.ok(resp))
+	public ResponseEntity<UsuarioLogin> Autentication(@RequestBody Optional<UsuarioLogin> user){
+		return usuarioService.Logar(user).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}
 	
