@@ -8,11 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.groupg4.global.model.UsuarioLogin;
 import com.groupg4.global.model.UsuarioModel;
 import com.groupg4.global.repository.UsuarioRepository;
 
 @Service
-public class UserServiceUsuario {
+public class UsuarioService {
 
 	@Autowired
 	private UsuarioRepository repository;
@@ -29,12 +30,12 @@ public class UserServiceUsuario {
 	public Optional<UsuarioLogin> Logar(Optional<UsuarioLogin> user) {
 
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		Optional<UsuarioModel> usuario = repository.findByUsuario(user.get().getLoginUsuario());
+		Optional<UsuarioModel> usuario = repository.findByLoginUsuario(user.get().getUsuario());
 
 		if (usuario.isPresent()) {
-			if (encoder.matches(user.get().getSenhaUsuario(), usuario.get().getSenhaUsuario())) {
+			if (encoder.matches(user.get().getSenha(), usuario.get().getSenhaUsuario())) {
 
-				String auth = user.get().getLoginUsuario() + ":" + user.get().getSenhaUsuario();
+				String auth = user.get().getUsuario() + ":" + user.get().getSenha();
 				byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
 				String authHeader = "Basic " + new String(encodedAuth);
 

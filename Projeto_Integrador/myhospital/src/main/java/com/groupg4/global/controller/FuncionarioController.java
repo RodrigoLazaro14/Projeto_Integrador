@@ -1,9 +1,8 @@
 package com.groupg4.global.controller;
 
 import java.util.List;
+import java.util.Optional;
 
-import org.generation.blogPessoal.model.UserLogin;
-import org.generation.blogPessoal.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,10 +15,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.groupg4.global.repository.FuncionarioRepository;
-import com.google.common.base.Optional;
+
 import com.groupg4.global.model.FuncionarioLogin;
 import com.groupg4.global.model.FuncionarioModel;
+import com.groupg4.global.repository.FuncionarioRepository;
+import com.groupg4.global.service.FuncionarioService;
 
 @RestController
 @CrossOrigin("*")
@@ -68,9 +68,9 @@ public class FuncionarioController {
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}
 	@PostMapping("/cadastrar")
-	public ResponseEntity<emailFuncionario> Post(@RequestBody emailFuncionario email) {
+	public ResponseEntity<FuncionarioModel> Post(@RequestBody FuncionarioModel emailFuncionario) {
 		return ResponseEntity.status(HttpStatus.CREATED)
-				.body(funcionarioService.CadastrarFuncionario(email));
+				.body(funcionarioService.CadastrarFuncionario(emailFuncionario));
 	}
 
 }

@@ -1,30 +1,35 @@
-package com.groupg4.global.security;
+package com.groupg4.global.seguranca;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.stereotype.Service;
+import org.springframework.security.core.userdetails.UserDetails;
 
-@Service
-public class UserDetailsImpl implements UserDetails {
+import com.groupg4.global.model.UsuarioLogin;
+
+
+
+public class UserDetailsUsuario implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
 
 	private String userName;
 	private String password;
+	private List<GrantedAuthority> authorities;
 
-	public UserDetailsImpl(Usuario user) {
+	public UserDetailsUsuario(UsuarioLogin user) {
 		this.userName = user.getUsuario();
 		this.password = user.getSenha();
 	}
 
-	public UserDetailsImpl() {
+	public UserDetailsUsuario() {
 	}
 	
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return null;
+		return authorities;
 	}
 
 	@Override

@@ -56,9 +56,6 @@ public class UsuarioModel {
 	public void setIdUsuario(Long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
-	
-	//Getters and Setters
-	
 	public String getNomeUsuario() {
 		return nomeUsuario;
 	}
@@ -113,12 +110,13 @@ public class UsuarioModel {
 	public void setLoginUsuario(String loginUsuario) {
 		this.loginUsuario = loginUsuario;
 	}
-	
 	public String getSenhaUsuario() {
 		return senhaUsuario;
 	}
 	public void setSenhaUsuario(String senhaUsuario) {
 		this.senhaUsuario = senhaUsuario;
 	}
+	
+	
 		
 }

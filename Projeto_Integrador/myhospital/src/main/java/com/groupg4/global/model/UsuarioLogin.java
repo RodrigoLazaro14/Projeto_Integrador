@@ -1,6 +1,6 @@
 package com.groupg4.global.model;
 
-public class UserLogin {
+public class UsuarioLogin {
 	
 	private String nome;
 	
@@ -42,6 +42,4 @@ public class UserLogin {
 		this.token = token;
 	}
 	
-	
-
 }
