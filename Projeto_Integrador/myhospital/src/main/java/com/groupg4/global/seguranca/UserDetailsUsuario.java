@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.groupg4.global.model.UsuarioLogin;
+import com.groupg4.global.model.UsuarioModel;
 
 
 
@@ -18,9 +18,9 @@ public class UserDetailsUsuario implements UserDetails {
 	private String password;
 	private List<GrantedAuthority> authorities;
 
-	public UserDetailsUsuario(UsuarioLogin user) {
-		this.userName = user.getUsuario();
-		this.password = user.getSenha();
+	public UserDetailsUsuario(UsuarioModel user) {
+		this.userName = user.getLoginUsuario();
+		this.password = user.getSenhaUsuario();
 	}
 
 	public UserDetailsUsuario() {
