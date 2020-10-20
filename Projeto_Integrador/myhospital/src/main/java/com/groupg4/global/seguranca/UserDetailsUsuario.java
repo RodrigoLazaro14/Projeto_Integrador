@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.groupg4.global.model.HospitalModel;
 import com.groupg4.global.model.UsuarioModel;
 
 
@@ -19,6 +20,12 @@ public class UserDetailsUsuario implements UserDetails {
 		this.userName = user.getLoginUsuarioModel();
 		this.password = user.getSenhaUsuarioModel();
 	}
+//--------------------------------------------------------	
+	public UserDetailsUsuario(HospitalModel user) {
+		this.userName = user.getLoginHospital();
+		this.password = user.getSenhaHospital();
+	}
+//--------------------------------------------------------
 
 	public UserDetailsUsuario() {
 	}

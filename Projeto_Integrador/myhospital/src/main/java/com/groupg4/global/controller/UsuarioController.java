@@ -56,15 +56,6 @@ public class UsuarioController {
 				.orElse(ResponseEntity.notFound().build());
 	}
 	
-	
-//-----------------------------------TALVEZ SEJA RETIRADOS----------------------------------------
-	
-	@GetMapping("/cpf/{cpf}")
-	public ResponseEntity<List<UsuarioModel>> findByCpfUsuario(@PathVariable String cpf){
-		return ResponseEntity.ok(repository.findByCpfUsuarioModelContainingIgnoreCase(cpf));
-	}
-//------------------------------------------------------------------------------------------------
-
 	@GetMapping("/nome/{nome}")
 	public ResponseEntity<List<UsuarioModel>> findByNomeUsuario(@PathVariable String nome){
 		return ResponseEntity.ok(repository.findByNomeUsuarioModelContainingIgnoreCase(nome));

@@ -10,10 +10,6 @@ import com.groupg4.global.model.UsuarioModel;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<UsuarioModel, Long>{
-
-//---------------------TALVEZ SEJA RETIRADOS-----------------------------------------
-	public List<UsuarioModel>findByCpfUsuarioModelContainingIgnoreCase(String cpf);
-//-----------------------------------------------------------------------------------
 	
 	public List<UsuarioModel>findByNomeUsuarioModelContainingIgnoreCase(String nome);
 

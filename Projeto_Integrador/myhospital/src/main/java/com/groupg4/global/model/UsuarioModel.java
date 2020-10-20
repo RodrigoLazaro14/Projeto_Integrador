@@ -4,17 +4,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import java.sql.Date;
-import com.fasterxml.jackson.annotation.JsonFormat;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="tb_usuario")
 public class UsuarioModel {
 		
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY) //Auto increment ePRIMARY KEY.
+	@GeneratedValue(strategy=GenerationType.IDENTITY) //Auto increment e PRIMARY KEY.
 	private Long idUsuarioModel;
 		
 	@NotNull
@@ -25,32 +26,16 @@ public class UsuarioModel {
 	
 	@NotNull
 	private String senhaUsuarioModel;
+	
+//	private boolean tipoUsuario;
 
-//---------------------TALVEZ SEJAM RETIRADOS----------------------------------------
-	
-	@NotNull
-	@JsonFormat(pattern="yyyy-MM-dd")
-	private Date dataNascimentoUsuarioModel;
-	
-	@NotNull
-	private String enderecoUsuarioModel;
-	
-	private String telefoneUsuarioModel;
-	
-	@NotNull
-	private String celularUsuarioModel;
-	
-	@NotNull
-	private String rgUsuarioModel;
-	
-	@NotNull
-	private String cpfUsuarioModel;
-	
-	@NotNull
-	private String sexoUsuarioModel;
+//	private enum tipoUsuario {paciente, funcionario}
 
-//-----------------------------------------------------------------------------------
-	
+/*	
+	@ManyToOne
+	@JsonIgnoreProperties("funcionario")
+	private HospitalModel hospital;	
+*/	
 	//Getters and Setters
 	
 	public Long getIdUsuarioModel() {
@@ -84,66 +69,5 @@ public class UsuarioModel {
 	public void setSenhaUsuarioModel(String senhaUsuarioModel) {
 		this.senhaUsuarioModel = senhaUsuarioModel;
 	}
-
-//---------------------TALVEZ SEJAM RETIRADOS----------------------------------------
-		
-	
-	public Date getDataNascimentoUsuarioModel() {
-		return dataNascimentoUsuarioModel;
-	}
-
-	public void setDataNascimentoUsuarioModel(Date dataNascimentoUsuarioModel) {
-		this.dataNascimentoUsuarioModel = dataNascimentoUsuarioModel;
-	}
-
-	public String getEnderecoUsuarioModel() {
-		return enderecoUsuarioModel;
-	}
-
-	public void setEnderecoUsuarioModel(String enderecoUsuarioModel) {
-		this.enderecoUsuarioModel = enderecoUsuarioModel;
-	}
-
-	public String getTelefoneUsuarioModel() {
-		return telefoneUsuarioModel;
-	}
-
-	public void setTelefoneUsuarioModel(String telefoneUsuarioModel) {
-		this.telefoneUsuarioModel = telefoneUsuarioModel;
-	}
-
-	public String getCelularUsuarioModel() {
-		return celularUsuarioModel;
-	}
-
-	public void setCelularUsuarioModel(String celularUsuarioModel) {
-		this.celularUsuarioModel = celularUsuarioModel;
-	}
-
-	public String getRgUsuarioModel() {
-		return rgUsuarioModel;
-	}
-
-	public void setRgUsuarioModel(String rgUsuarioModel) {
-		this.rgUsuarioModel = rgUsuarioModel;
-	}
-
-	public String getCpfUsuarioModel() {
-		return cpfUsuarioModel;
-	}
-
-	public void setCpfUsuarioModel(String cpfUsuarioModel) {
-		this.cpfUsuarioModel = cpfUsuarioModel;
-	}
-
-	public String getSexoUsuarioModel() {
-		return sexoUsuarioModel;
-	}
-
-	public void setSexoUsuarioModel(String sexoUsuarioModel) {
-		this.sexoUsuarioModel = sexoUsuarioModel;
-	}
-
-//-----------------------------------------------------------------------------------
 
 }

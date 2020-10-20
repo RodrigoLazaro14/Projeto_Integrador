@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -27,13 +28,20 @@ public class HospitalModel {
 	@Column
 	private String codigoHospital;
 	
+	@NotNull
+	private String loginHospital;
+	@NotNull
+	private String senhaHospital;
+	
 	@OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("hospital")
 	private List<CategoriaModel> categoria;
 	
+/*	
 	@OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("funcionario")
 	private List<FuncionarioModel> funcionarioHospital;
+*/
 	
 	//Getters and Setters
 	
@@ -67,11 +75,19 @@ public class HospitalModel {
 	public void setCategoria(List<CategoriaModel> categoria) {
 		this.categoria = categoria;
 	}
-	public List<FuncionarioModel> getFuncionarioHospital() {
-		return funcionarioHospital;
+	public String getLoginHospital() {
+		return loginHospital;
 	}
-	public void setFuncionarioHospital(List<FuncionarioModel> funcionarioHospital) {
-		this.funcionarioHospital = funcionarioHospital;
+	public void setLoginHospital(String loginHospital) {
+		this.loginHospital = loginHospital;
 	}
+	public String getSenhaHospital() {
+		return senhaHospital;
+	}
+	public void setSenhaHospital(String senhaHospital) {
+		this.senhaHospital = senhaHospital;
+	}
+	
+	
 	
 }
