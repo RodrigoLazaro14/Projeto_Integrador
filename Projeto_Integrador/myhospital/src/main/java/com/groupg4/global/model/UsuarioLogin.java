@@ -9,7 +9,7 @@ public class UsuarioLogin {
 	private String senhaUsuarioLogin;
 	
 	private String tokenUsuarioLogin;
-	
+		
 	//Getters and Setters
 
 	public String getNomeUsuarioLogin() {
