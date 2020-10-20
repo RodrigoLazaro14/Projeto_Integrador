@@ -28,13 +28,10 @@ public class UserDetailsServiceUsuario implements UserDetailsService {
 		user.orElseThrow(() -> new UsernameNotFoundException(userName + " not found."));
 		return user.map(UserDetailsUsuario::new).get();
 	}
-	
 	public UserDetails loadUser2ByUsername(String userName) throws UsernameNotFoundException {
-		
-		//--------------------------------------------------------------------------------------------------
 		Optional<HospitalModel> user2 = hospitalRepository.findByLoginHospital(userName);
 		user2.orElseThrow(() -> new UsernameNotFoundException(userName + " not found."));
-		//--------------------------------------------------------------------------------------------------
+
 		return user2.map(UserDetailsUsuario::new).get();
 	}
 
