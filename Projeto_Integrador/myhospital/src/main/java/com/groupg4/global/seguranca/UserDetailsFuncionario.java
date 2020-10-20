@@ -1,7 +1,6 @@
 package com.groupg4.global.seguranca;
 
 import java.util.Collection;
-import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,18 +12,17 @@ public class UserDetailsFuncionario implements UserDetails {
 	private static final long serialVersionUID = 1L;
 	private String userName;
 	private String password;
-	private List<GrantedAuthority> authorities;
 
 	public UserDetailsFuncionario(FuncionarioModel user) {
-		this.userName = user.getLoginFuncionario();
-		this.password = user.getSenhaFuncionario();		
+		this.userName = user.getLoginFuncionarioModel();
+		this.password = user.getSenhaFuncionarioModel();		
 	}
 
 	public UserDetailsFuncionario() {}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return authorities;
+		return null;
 	}
 
 	@Override

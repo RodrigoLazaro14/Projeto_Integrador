@@ -21,23 +21,23 @@ public class FuncionarioService {
 	public FuncionarioModel CadastrarFuncionario(FuncionarioModel funcionario) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
-		String senhaEncoder = encoder.encode(funcionario.getSenhaFuncionario());
-		funcionario.setSenhaFuncionario(senhaEncoder);
+		String senhaEncoder = encoder.encode(funcionario.getSenhaFuncionarioModel());
+		funcionario.setSenhaFuncionarioModel(senhaEncoder);
 
 		return repository.save(funcionario);
 	}
 
 	public Optional<FuncionarioLogin> Logar(Optional<FuncionarioLogin> user){
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		Optional<FuncionarioModel> funcionario = repository.findByLoginFuncionario(user.get().getLoginFuncionario());
+		Optional<FuncionarioModel> funcionario = repository.findByLoginFuncionarioModel(user.get().getLoginFuncionarioLogin());
 		if(funcionario.isPresent()) {
-			if(encoder.matches(user.get().getSenha(), funcionario.get().getSenhaFuncionario())){
-				String auth = user.get().getLoginFuncionario() + ":" + user.get().getSenha();
+			if(encoder.matches(user.get().getSenhaFuncionarioLogin(), funcionario.get().getSenhaFuncionarioModel())){
+				String auth = user.get().getLoginFuncionarioLogin() + ":" + user.get().getSenhaFuncionarioLogin();
 				byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
 				String authHeader = "Basic " + new String(encodedAuth);
 			
-				user.get().setToken(authHeader);
-				user.get().setNome(funcionario.get().getNomeFuncionario());
+				user.get().setTokenFuncionarioLogin(authHeader);
+				user.get().setNomeFuncionarioLogin(funcionario.get().getNomeFuncionarioModel());
 			
 				return user;
 			}

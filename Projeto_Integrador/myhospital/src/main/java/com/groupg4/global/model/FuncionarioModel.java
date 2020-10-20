@@ -15,57 +15,68 @@ public class FuncionarioModel {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY) //Faz com que o ID seja auto increment, e também já indica que é uma chave primaria (PRIMARY KEY).
-	private Long idFuncionario;
+	private Long idFuncionarioModel;
 	@Column
-	private String nomeFuncionario;
+	private String nomeFuncionarioModel;
 	@Column
-	private String senhaFuncionario;
+	private String senhaFuncionarioModel;
 	@Column
-	private String loginFuncionario;
+	private String loginFuncionarioModel;
 	@Column
-	private String codigoHospitalFuncionario;
+	private String codigoHospitalFuncionarioModel;
 	
 	@ManyToOne
 	@JsonIgnoreProperties("funcionario")
 	private HospitalModel hospital;
 	
 	//Getters and Setters
-	
-	public Long getIdFuncionario() {
-		return idFuncionario;
+
+	public Long getIdFuncionarioModel() {
+		return idFuncionarioModel;
 	}
-	public void setIdFuncionario(Long idFuncionario) {
-		this.idFuncionario = idFuncionario;
+
+	public void setIdFuncionarioModel(Long idFuncionarioModel) {
+		this.idFuncionarioModel = idFuncionarioModel;
 	}
-	public String getNomeFuncionario() {
-		return nomeFuncionario;
+
+	public String getNomeFuncionarioModel() {
+		return nomeFuncionarioModel;
 	}
-	public void setNomeFuncionario(String nomeFuncionario) {
-		this.nomeFuncionario = nomeFuncionario;
+
+	public void setNomeFuncionarioModel(String nomeFuncionarioModel) {
+		this.nomeFuncionarioModel = nomeFuncionarioModel;
 	}
-	public String getSenhaFuncionario() {
-		return senhaFuncionario;
+
+	public String getSenhaFuncionarioModel() {
+		return senhaFuncionarioModel;
 	}
-	public void setSenhaFuncionario(String senhaFuncionario) {
-		this.senhaFuncionario = senhaFuncionario;
+
+	public void setSenhaFuncionarioModel(String senhaFuncionarioModel) {
+		this.senhaFuncionarioModel = senhaFuncionarioModel;
 	}
-	public String getLoginFuncionario() {
-		return loginFuncionario;
+
+	public String getLoginFuncionarioModel() {
+		return loginFuncionarioModel;
 	}
-	public void setLoginFuncionario(String loginFuncionario) {
-		this.loginFuncionario = loginFuncionario;
+
+	public void setLoginFuncionarioModel(String loginFuncionarioModel) {
+		this.loginFuncionarioModel = loginFuncionarioModel;
 	}
-	public String getCodigoHospitalFuncionario() {
-		return codigoHospitalFuncionario;
+
+	public String getCodigoHospitalFuncionarioModel() {
+		return codigoHospitalFuncionarioModel;
 	}
-	public void setCodigoHospitalFuncionario(String codigoHospitalFuncionario) {
-		this.codigoHospitalFuncionario = codigoHospitalFuncionario;
+
+	public void setCodigoHospitalFuncionarioModel(String codigoHospitalFuncionarioModel) {
+		this.codigoHospitalFuncionarioModel = codigoHospitalFuncionarioModel;
 	}
+
 	public HospitalModel getHospital() {
 		return hospital;
 	}
+
 	public void setHospital(HospitalModel hospital) {
 		this.hospital = hospital;
 	}
-		
+			
 }

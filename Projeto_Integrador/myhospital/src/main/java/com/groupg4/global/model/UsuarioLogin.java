@@ -2,44 +2,46 @@ package com.groupg4.global.model;
 
 public class UsuarioLogin {
 	
-	private String nome;
+	private String nomeUsuarioLogin;
 	
-	private String usuario;
+	private String loginUsuarioLogin;
 	
-	private String senha;
+	private String senhaUsuarioLogin;
 	
-	private String token;
+	private String tokenUsuarioLogin;
+	
+	//Getters and Setters
 
-	public String getNome() {
-		return nome;
+	public String getNomeUsuarioLogin() {
+		return nomeUsuarioLogin;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomeUsuarioLogin(String nomeUsuarioLogin) {
+		this.nomeUsuarioLogin = nomeUsuarioLogin;
 	}
 
-	public String getUsuario() {
-		return usuario;
+	public String getLoginUsuarioLogin() {
+		return loginUsuarioLogin;
 	}
 
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
+	public void setLoginUsuarioLogin(String loginUsuarioLogin) {
+		this.loginUsuarioLogin = loginUsuarioLogin;
 	}
 
-	public String getSenha() {
-		return senha;
+	public String getSenhaUsuarioLogin() {
+		return senhaUsuarioLogin;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setSenhaUsuarioLogin(String senhaUsuarioLogin) {
+		this.senhaUsuarioLogin = senhaUsuarioLogin;
 	}
 
-	public String getToken() {
-		return token;
+	public String getTokenUsuarioLogin() {
+		return tokenUsuarioLogin;
 	}
 
-	public void setToken(String token) {
-		this.token = token;
+	public void setTokenUsuarioLogin(String tokenUsuarioLogin) {
+		this.tokenUsuarioLogin = tokenUsuarioLogin;
 	}
 	
 }

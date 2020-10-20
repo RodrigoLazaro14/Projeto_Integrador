@@ -2,7 +2,6 @@ package com.groupg4.global.seguranca;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -37,8 +36,7 @@ public class SecurityConfigUsuario extends WebSecurityConfigurerAdapter {
 		.antMatchers("/usuarios/cadastrar").permitAll()
 		.anyRequest().authenticated()
 		.and().httpBasic()
-		.and().sessionManagement()
-		.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+		.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 		.and().cors()
 		.and().csrf().disable();
 	}

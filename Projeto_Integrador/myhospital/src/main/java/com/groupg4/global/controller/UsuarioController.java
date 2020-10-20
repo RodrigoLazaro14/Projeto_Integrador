@@ -22,13 +22,13 @@ import com.groupg4.global.repository.UsuarioRepository;
 import com.groupg4.global.service.UsuarioService;
 
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping("/usuarios")
 @CrossOrigin(origins="*", allowedHeaders="*")
 public class UsuarioController {
 	
 	@Autowired
 	private UsuarioRepository repository;
-	
+
 	@Autowired
 	private UsuarioService usuarioService;
 	
@@ -43,6 +43,7 @@ public class UsuarioController {
 		return ResponseEntity.status(HttpStatus.CREATED)
 				.body(usuarioService.CadastrarUsuario(usuario));
 	}
+
 	@GetMapping
 	public ResponseEntity<List<UsuarioModel>> GetAll(){
 		return ResponseEntity.ok(repository.findAll());
@@ -55,22 +56,28 @@ public class UsuarioController {
 				.orElse(ResponseEntity.notFound().build());
 	}
 	
+	
+//-----------------------------------TALVEZ SEJA RETIRADOS----------------------------------------
+	
 	@GetMapping("/cpf/{cpf}")
 	public ResponseEntity<List<UsuarioModel>> findByCpfUsuario(@PathVariable String cpf){
-		return ResponseEntity.ok(repository.findByCpfUsuarioContainingIgnoreCase(cpf));
+		return ResponseEntity.ok(repository.findByCpfUsuarioModelContainingIgnoreCase(cpf));
 	}
+//------------------------------------------------------------------------------------------------
 
 	@GetMapping("/nome/{nome}")
 	public ResponseEntity<List<UsuarioModel>> findByNomeUsuario(@PathVariable String nome){
-		return ResponseEntity.ok(repository.findByNomeUsuarioContainingIgnoreCase(nome));
+		return ResponseEntity.ok(repository.findByNomeUsuarioModelContainingIgnoreCase(nome));
 	}
+	
+	
 	@PostMapping
 	public ResponseEntity<UsuarioModel> post (@RequestBody UsuarioModel usuario){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(usuario));
 	}
 	@PutMapping("/{id}")
 	public ResponseEntity<UsuarioModel> put(@PathVariable long id, @RequestBody UsuarioModel usuario){
-		usuario.setIdUsuario(id);
+		usuario.setIdUsuarioModel(id);
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(usuario));
 	}
 	

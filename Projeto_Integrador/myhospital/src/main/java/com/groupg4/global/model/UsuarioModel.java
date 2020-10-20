@@ -15,108 +15,135 @@ public class UsuarioModel {
 		
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY) //Auto increment ePRIMARY KEY.
-	private Long idUsuario;
+	private Long idUsuarioModel;
 		
 	@NotNull
-	private String nomeUsuario;
+	private String nomeUsuarioModel;
+	
+	@NotNull
+	private String loginUsuarioModel;
+	
+	@NotNull
+	private String senhaUsuarioModel;
+
+//---------------------TALVEZ SEJAM RETIRADOS----------------------------------------
 	
 	@NotNull
 	@JsonFormat(pattern="yyyy-MM-dd")
-	private Date dataNascimento;
+	private Date dataNascimentoUsuarioModel;
 	
 	@NotNull
-	private String enderecoUsuario;
+	private String enderecoUsuarioModel;
 	
-	private String telefoneUsuario;
-	
-	@NotNull
-	private String celularUsuario;
+	private String telefoneUsuarioModel;
 	
 	@NotNull
-	private String rgUsuario;
+	private String celularUsuarioModel;
 	
 	@NotNull
-	private String cpfUsuario;
+	private String rgUsuarioModel;
 	
 	@NotNull
-	private String sexoUsuario;
+	private String cpfUsuarioModel;
 	
 	@NotNull
-	private String loginUsuario;
-	
-	@NotNull
-	private String senhaUsuario;
-	
+	private String sexoUsuarioModel;
+
+//-----------------------------------------------------------------------------------
 	
 	//Getters and Setters
 	
-	public Long getIdUsuario() {
-		return idUsuario;
+	public Long getIdUsuarioModel() {
+		return idUsuarioModel;
 	}
-	public void setIdUsuario(Long idUsuario) {
-		this.idUsuario = idUsuario;
+
+	public void setIdUsuarioModel(Long idUsuarioModel) {
+		this.idUsuarioModel = idUsuarioModel;
 	}
-	public String getNomeUsuario() {
-		return nomeUsuario;
+
+	public String getNomeUsuarioModel() {
+		return nomeUsuarioModel;
 	}
-	public void setNomeUsuario(String nomeUsuario) {
-		this.nomeUsuario = nomeUsuario;
+
+	public void setNomeUsuarioModel(String nomeUsuarioModel) {
+		this.nomeUsuarioModel = nomeUsuarioModel;
 	}
-	public Date getDataNascimento() {
-		return dataNascimento;
+
+	public String getLoginUsuarioModel() {
+		return loginUsuarioModel;
 	}
-	public void setDataNascimento(Date dataNascimento) {
-		this.dataNascimento = dataNascimento;
+
+	public void setLoginUsuarioModel(String loginUsuarioModel) {
+		this.loginUsuarioModel = loginUsuarioModel;
 	}
-	public String getEnderecoUsuario() {
-		return enderecoUsuario;
+
+	public String getSenhaUsuarioModel() {
+		return senhaUsuarioModel;
 	}
-	public void setEnderecoUsuario(String enderecoUsuario) {
-		this.enderecoUsuario = enderecoUsuario;
+
+	public void setSenhaUsuarioModel(String senhaUsuarioModel) {
+		this.senhaUsuarioModel = senhaUsuarioModel;
 	}
-	public String getTelefoneUsuario() {
-		return telefoneUsuario;
-	}
-	public void setTelefoneUsuario(String telefoneUsuario) {
-		this.telefoneUsuario = telefoneUsuario;
-	}
-	public String getCelularUsuario() {
-		return celularUsuario;
-	}
-	public void setCelularUsuario(String celularUsuario) {
-		this.celularUsuario = celularUsuario;
-	}
-	public String getRgUsuario() {
-		return rgUsuario;
-	}
-	public void setRgUsuario(String rgUsuario) {
-		this.rgUsuario = rgUsuario;
-	}
-	public String getCpfUsuario() {
-		return cpfUsuario;
-	}
-	public void setCpfUsuario(String cpfUsuario) {
-		this.cpfUsuario = cpfUsuario;
-	}
-	public String getSexoUsuario() {
-		return sexoUsuario;
-	}
-	public void setSexoUsuario(String sexoUsuario) {
-		this.sexoUsuario = sexoUsuario;
-	}
-	public String getLoginUsuario() {
-		return loginUsuario;
-	}
-	public void setLoginUsuario(String loginUsuario) {
-		this.loginUsuario = loginUsuario;
-	}
-	public String getSenhaUsuario() {
-		return senhaUsuario;
-	}
-	public void setSenhaUsuario(String senhaUsuario) {
-		this.senhaUsuario = senhaUsuario;
-	}
-	
-	
+
+//---------------------TALVEZ SEJAM RETIRADOS----------------------------------------
 		
+	
+	public Date getDataNascimentoUsuarioModel() {
+		return dataNascimentoUsuarioModel;
+	}
+
+	public void setDataNascimentoUsuarioModel(Date dataNascimentoUsuarioModel) {
+		this.dataNascimentoUsuarioModel = dataNascimentoUsuarioModel;
+	}
+
+	public String getEnderecoUsuarioModel() {
+		return enderecoUsuarioModel;
+	}
+
+	public void setEnderecoUsuarioModel(String enderecoUsuarioModel) {
+		this.enderecoUsuarioModel = enderecoUsuarioModel;
+	}
+
+	public String getTelefoneUsuarioModel() {
+		return telefoneUsuarioModel;
+	}
+
+	public void setTelefoneUsuarioModel(String telefoneUsuarioModel) {
+		this.telefoneUsuarioModel = telefoneUsuarioModel;
+	}
+
+	public String getCelularUsuarioModel() {
+		return celularUsuarioModel;
+	}
+
+	public void setCelularUsuarioModel(String celularUsuarioModel) {
+		this.celularUsuarioModel = celularUsuarioModel;
+	}
+
+	public String getRgUsuarioModel() {
+		return rgUsuarioModel;
+	}
+
+	public void setRgUsuarioModel(String rgUsuarioModel) {
+		this.rgUsuarioModel = rgUsuarioModel;
+	}
+
+	public String getCpfUsuarioModel() {
+		return cpfUsuarioModel;
+	}
+
+	public void setCpfUsuarioModel(String cpfUsuarioModel) {
+		this.cpfUsuarioModel = cpfUsuarioModel;
+	}
+
+	public String getSexoUsuarioModel() {
+		return sexoUsuarioModel;
+	}
+
+	public void setSexoUsuarioModel(String sexoUsuarioModel) {
+		this.sexoUsuarioModel = sexoUsuarioModel;
+	}
+
+//-----------------------------------------------------------------------------------
+
 }

@@ -2,47 +2,46 @@ package com.groupg4.global.model;
 
 public class FuncionarioLogin {
 
-	private String nome;
+	private String nomeFuncionarioLogin;
 
-	private String loginFuncionario;
+	private String loginFuncionarioLogin;
 
-	private String senha;
+	private String senhaFuncionarioLogin;
 	
-	private String token;
+	private String tokenFuncionarioLogin;
+
+	//Getters and Setters
 	
-	
-
-	public String getToken() {
-		return token;
+	public String getNomeFuncionarioLogin() {
+		return nomeFuncionarioLogin;
 	}
 
-	public void setToken(String token) {
-		this.token = token;
+	public void setNomeFuncionarioLogin(String nomeFuncionarioLogin) {
+		this.nomeFuncionarioLogin = nomeFuncionarioLogin;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getLoginFuncionarioLogin() {
+		return loginFuncionarioLogin;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setLoginFuncionarioLogin(String loginFuncionarioLogin) {
+		this.loginFuncionarioLogin = loginFuncionarioLogin;
 	}
 
-	public String getLoginFuncionario() {
-		return loginFuncionario;
+	public String getSenhaFuncionarioLogin() {
+		return senhaFuncionarioLogin;
 	}
 
-	public void setLoginFuncionario(String loginFuncionario) {
-		this.loginFuncionario = loginFuncionario;
+	public void setSenhaFuncionarioLogin(String senhaFuncionarioLogin) {
+		this.senhaFuncionarioLogin = senhaFuncionarioLogin;
 	}
 
-	public String getSenha() {
-		return senha;
+	public String getTokenFuncionarioLogin() {
+		return tokenFuncionarioLogin;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setTokenFuncionarioLogin(String tokenFuncionarioLogin) {
+		this.tokenFuncionarioLogin = tokenFuncionarioLogin;
 	}
-
-
+		
 }

@@ -13,6 +13,6 @@ public interface FuncionarioRepository extends JpaRepository<FuncionarioModel, L
 	
 	public List<FuncionarioModel> findAllByNomeFuncionarioContainingIgnoreCase( String nome);
 
-	public Optional<FuncionarioModel> findByLoginFuncionario(String funcionario); 
+	public Optional<FuncionarioModel> findByLoginFuncionarioModel(String funcionario); 
 	
 }

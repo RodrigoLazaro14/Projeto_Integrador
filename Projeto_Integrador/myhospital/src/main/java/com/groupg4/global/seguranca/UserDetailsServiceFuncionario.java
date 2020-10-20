@@ -18,7 +18,7 @@ public class UserDetailsServiceFuncionario implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-		Optional<FuncionarioModel> user = funcionarioRepository.findByLoginFuncionario(userName);
+		Optional<FuncionarioModel> user = funcionarioRepository.findByLoginFuncionarioModel(userName);
 	user.orElseThrow(() -> new UsernameNotFoundException(userName + "not found."));
 	return user.map(UserDetailsFuncionario::new).get();
 	}

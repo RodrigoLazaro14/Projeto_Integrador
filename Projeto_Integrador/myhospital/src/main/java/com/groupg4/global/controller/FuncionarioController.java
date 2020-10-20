@@ -22,8 +22,8 @@ import com.groupg4.global.repository.FuncionarioRepository;
 import com.groupg4.global.service.FuncionarioService;
 
 @RestController
-@CrossOrigin("*")
 @RequestMapping("/funcionarios")
+@CrossOrigin(origins="*", allowedHeaders="*")
 public class FuncionarioController {
 	@Autowired
 	private FuncionarioRepository repository;
@@ -53,7 +53,7 @@ public class FuncionarioController {
 
 	@PutMapping("/{id}")
 	public ResponseEntity<FuncionarioModel> put(@PathVariable long id, @RequestBody FuncionarioModel funcionario) {
-		funcionario.setIdFuncionario(id);
+		funcionario.setIdFuncionarioModel(id);
 		return ResponseEntity.ok(repository.save(funcionario));
 	}
 
@@ -68,9 +68,9 @@ public class FuncionarioController {
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}
 	@PostMapping("/cadastrar")
-	public ResponseEntity<FuncionarioModel> Post(@RequestBody FuncionarioModel emailFuncionario) {
+	public ResponseEntity<FuncionarioModel> Post(@RequestBody FuncionarioModel loginFuncionario) {
 		return ResponseEntity.status(HttpStatus.CREATED)
-				.body(funcionarioService.CadastrarFuncionario(emailFuncionario));
+				.body(funcionarioService.CadastrarFuncionario(loginFuncionario));
 	}
 
 }
