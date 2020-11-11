@@ -23,6 +23,9 @@ public class UsuarioModel {
 	
 	@NotNull
 	private String senhaUsuarioModel;
+	
+	@NotNull
+	private int tipoPessoa;
 
 	//Getters and Setters
 	
@@ -57,5 +60,15 @@ public class UsuarioModel {
 	public void setSenhaUsuarioModel(String senhaUsuarioModel) {
 		this.senhaUsuarioModel = senhaUsuarioModel;
 	}
+
+	public int getTipoPessoa() {
+		return tipoPessoa;
+	}
+
+	public void setTipoPessoa(int tipoPessoa) {
+		this.tipoPessoa = tipoPessoa;
+	}
+	
+	
 
 }

@@ -45,6 +45,7 @@ public class UsuarioService {
 
 				user.get().setTokenUsuarioLogin(authHeader);				
 				user.get().setNomeUsuarioLogin(usuario.get().getNomeUsuarioModel());
+				user.get().setTipoPessoa(usuario.get().getTipoPessoa());
 				return user;
 
 			}
@@ -78,6 +79,7 @@ public class UsuarioService {
 
 				user.get().setTokenUsuarioLogin(authHeader);				
 				user.get().setNomeUsuarioLogin(usuario2.get().getNomeHospital());
+				user.get().setTipoPessoa(usuario2.get().getTipoPessoa());
 				return user;
 
 			}

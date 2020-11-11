@@ -27,11 +27,13 @@ public class HospitalModel {
 	private String enderecoHospital;
 	@Column
 	private String codigoHospital;
-	
+	@NotNull
+	private int tipoPessoa;
 	@NotNull
 	private String loginHospital;
 	@NotNull
 	private String senhaHospital;
+
 	
 	@OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("hospital")
@@ -87,7 +89,12 @@ public class HospitalModel {
 	public void setSenhaHospital(String senhaHospital) {
 		this.senhaHospital = senhaHospital;
 	}
-	
+	public int getTipoPessoa() {
+		return tipoPessoa;
+	}
+	public void setTipoPessoa(int tipoPessoa) {
+		this.tipoPessoa = tipoPessoa;
+	}
 	
 	
 }
