@@ -28,7 +28,9 @@ public class HospitalModel {
 	@Column
 	private String codigoHospital;
 	@NotNull
-	private int tipoPessoa;
+	private int tipoPessoa = 2;
+	@NotNull
+	private String telefoneHospital;
 	@NotNull
 	private String loginHospital;
 	@NotNull
@@ -38,12 +40,7 @@ public class HospitalModel {
 	@OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("hospital")
 	private List<CategoriaModel> categoria;
-	
-/*	
-	@OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties("funcionario")
-	private List<FuncionarioModel> funcionarioHospital;
-*/
+
 	
 	//Getters and Setters
 	
@@ -94,6 +91,12 @@ public class HospitalModel {
 	}
 	public void setTipoPessoa(int tipoPessoa) {
 		this.tipoPessoa = tipoPessoa;
+	}
+	public String getTelefoneHospital() {
+		return telefoneHospital;
+	}
+	public void setTelefoneHospital(String telefoneHospital) {
+		this.telefoneHospital = telefoneHospital;
 	}
 	
 	

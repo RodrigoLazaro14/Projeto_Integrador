@@ -25,7 +25,7 @@ public class UsuarioModel {
 	private String senhaUsuarioModel;
 	
 	@NotNull
-	private int tipoPessoa;
+	private int tipoPessoa = 1;
 
 	//Getters and Setters
 	

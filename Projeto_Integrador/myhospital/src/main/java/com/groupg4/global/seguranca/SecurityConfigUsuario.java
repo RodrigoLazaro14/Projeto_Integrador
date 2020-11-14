@@ -36,6 +36,7 @@ public class SecurityConfigUsuario extends WebSecurityConfigurerAdapter {
 		.antMatchers("/hospitais/logar").permitAll()
 		.antMatchers("/usuarios/cadastrar").permitAll()
 		.antMatchers("/hospitais/cadastrar").permitAll()
+		.antMatchers("/hospitais").permitAll()
 		.anyRequest().authenticated()
 		.and().httpBasic()
 		.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
