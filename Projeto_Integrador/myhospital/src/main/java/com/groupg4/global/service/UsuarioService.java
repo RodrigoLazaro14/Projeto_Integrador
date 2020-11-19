@@ -1,6 +1,7 @@
 package com.groupg4.global.service;
 
 import java.nio.charset.Charset;
+import java.util.List;
 import java.util.Optional;
 
 import org.apache.commons.codec.binary.Base64;
@@ -8,9 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.groupg4.global.model.CategoriaModel;
 import com.groupg4.global.model.HospitalModel;
 import com.groupg4.global.model.UsuarioLogin;
 import com.groupg4.global.model.UsuarioModel;
+import com.groupg4.global.repository.CategoriaRepository;
 import com.groupg4.global.repository.HospitalRepository;
 import com.groupg4.global.repository.UsuarioRepository;
 
@@ -21,6 +24,15 @@ public class UsuarioService {
 	private UsuarioRepository repository;
 	@Autowired
 	private HospitalRepository hospitalRepository;
+	@Autowired
+	private CategoriaRepository categoriaRepository;
+
+	public List<CategoriaModel> salvarCategoriaHospital(HospitalModel hospital) {
+		for (CategoriaModel c : hospital.getCategorias()) {
+			this.categoriaRepository.save(c);
+		}
+		return categoriaRepository.findAll();
+	}
 
 	public UsuarioModel CadastrarUsuario(UsuarioModel usuario) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -43,7 +55,7 @@ public class UsuarioService {
 				byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
 				String authHeader = "Basic " + new String(encodedAuth);
 
-				user.get().setTokenUsuarioLogin(authHeader);				
+				user.get().setTokenUsuarioLogin(authHeader);
 				user.get().setNomeUsuarioLogin(usuario.get().getNomeUsuarioModel());
 				user.get().setTipoPessoa(usuario.get().getTipoPessoa());
 				return user;
@@ -53,8 +65,6 @@ public class UsuarioService {
 		return null;
 	}
 //-------------------------------------------------------------------------------------------------------------------
-	
-
 
 	public HospitalModel CadastrarUsuario(HospitalModel usuario) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -77,7 +87,7 @@ public class UsuarioService {
 				byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
 				String authHeader = "Basic " + new String(encodedAuth);
 
-				user.get().setTokenUsuarioLogin(authHeader);				
+				user.get().setTokenUsuarioLogin(authHeader);
 				user.get().setNomeUsuarioLogin(usuario2.get().getNomeHospital());
 				user.get().setTipoPessoa(usuario2.get().getTipoPessoa());
 				return user;
@@ -86,5 +96,5 @@ public class UsuarioService {
 		}
 		return null;
 	}
-	
+
 }

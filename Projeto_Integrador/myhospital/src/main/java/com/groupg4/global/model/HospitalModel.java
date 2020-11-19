@@ -5,14 +5,16 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.groupg4.global.enums.TipoUsuarioEnum;
 
 @Entity
 @Table(name= "tb_hospital")
@@ -28,7 +30,7 @@ public class HospitalModel {
 	@Column
 	private String codigoHospital;
 	@NotNull
-	private int tipoPessoa = 2;
+	private int tipoPessoa = TipoUsuarioEnum.PESSOA_JURIDICA.getCodigo();
 	@NotNull
 	private String telefoneHospital;
 	@NotNull
@@ -36,10 +38,17 @@ public class HospitalModel {
 	@NotNull
 	private String senhaHospital;
 
+	@ManyToMany
+	@JoinTable(name = "tb_categoria_hospital")
+	private List<CategoriaModel> categorias;
+
 	
-	@OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties("hospital")
+/*@ManyToMany(mappedBy = "hospital")
 	private List<CategoriaModel> categoria;
+	
+	@ManyToMany(mappedBy = "hospital")
+	@JsonIgnoreProperties("hospital")
+	private List<CategoriaModel> categoria;*/
 
 	
 	//Getters and Setters
@@ -68,11 +77,12 @@ public class HospitalModel {
 	public void setCodigoHospital(String codigoHospital) {
 		this.codigoHospital = codigoHospital;
 	}
-	public List<CategoriaModel> getCategoria() {
-		return categoria;
+	
+	public List<CategoriaModel> getCategorias() {
+		return categorias;
 	}
-	public void setCategoria(List<CategoriaModel> categoria) {
-		this.categoria = categoria;
+	public void setCategorias(List<CategoriaModel> categorias) {
+		this.categorias = categorias;
 	}
 	public String getLoginHospital() {
 		return loginHospital;

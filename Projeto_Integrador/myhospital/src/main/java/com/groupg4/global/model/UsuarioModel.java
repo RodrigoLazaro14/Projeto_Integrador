@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.groupg4.global.enums.TipoUsuarioEnum;
+
 @Entity
 @Table(name="tb_usuario")
 public class UsuarioModel {
@@ -25,7 +27,7 @@ public class UsuarioModel {
 	private String senhaUsuarioModel;
 	
 	@NotNull
-	private int tipoPessoa = 1;
+	private int tipoPessoa = TipoUsuarioEnum.PESSOA_FISICA.getCodigo();
 
 	//Getters and Setters
 	

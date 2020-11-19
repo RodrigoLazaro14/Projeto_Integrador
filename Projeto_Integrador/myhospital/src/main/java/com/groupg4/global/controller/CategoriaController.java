@@ -2,6 +2,8 @@ package com.groupg4.global.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.groupg4.global.model.CategoriaModel;
+import com.groupg4.global.model.HospitalModel;
 import com.groupg4.global.repository.CategoriaRepository;
+import com.groupg4.global.service.UsuarioService;
 
 @RestController
 @RequestMapping("/categoria")
@@ -25,6 +29,8 @@ public class CategoriaController {
 	
 	@Autowired
 	private CategoriaRepository repository;
+	@Autowired 
+	private UsuarioService usuarioService;
 	
 	@GetMapping
 	public ResponseEntity<List<CategoriaModel>> findAllCategoria(){
@@ -43,8 +49,12 @@ public class CategoriaController {
 	
 	
 	@PostMapping
-	public ResponseEntity<CategoriaModel> postCategoria(@RequestBody CategoriaModel categoria){
-		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(categoria));
+	public ResponseEntity<List <CategoriaModel>> postCategoria(@RequestBody HospitalModel hospital, HttpServletRequest request){
+		String token = request.getHeader("Authorization");
+		System.out.println(token);
+		
+		
+		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.salvarCategoriaHospital(hospital));
 	}
 	
 	@PutMapping("/{idCategoria}")

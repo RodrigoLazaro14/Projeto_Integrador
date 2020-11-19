@@ -11,5 +11,6 @@ import com.groupg4.global.model.CategoriaModel;
 public interface CategoriaRepository extends JpaRepository<CategoriaModel, Long> {
 
 	public List<CategoriaModel> findByNomeCategoriaContainingIgnoreCase(String nome);
+	
 
 }
